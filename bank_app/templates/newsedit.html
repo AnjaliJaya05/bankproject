@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <style>
+         body{
+    background-image:url({% static 'bankwall2.jpg' %});
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:cover;
+    position:relative;
+    height:550px;
+    margin: 10px;
+    }
+         .btn-grad {
+            background-image: linear-gradient(to right, #314755 0%, #26a0da  51%, #314755  100%);
+            padding: 15px 45px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+            display: block;
+            margin-left:135px;
+            margin-top:20px;
+            height:35px;
+            width:42%;
+            padding-top:7px;
+            padding-left:2px;
+            padding-right:0px;
+          }
+
+          .btn-grad:hover {
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+          }
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="height:450px;width:50%;background-image:url({% static 'bank5.avif' %});margin-left:290px;margin-top:50px;float:left;padding-left:30px;">
+<form method="post" enctype="multipart/form-data">{% csrf_token %}
+    <u style="color:rgb(64, 64, 175);"><h1 style="margin-left:190px;">Edit Card</h1></u>
+    <table style="margin-left:60px;" height="300px" width="500px">
+        <tr>
+            <th align="left" style="color:rgb(64, 64, 175);"><label>TOPIC</label></th>
+            <td><input type="text" name="topic"  value="{{a.topic}}"></td>
+        </tr>
+        <tr>
+            <th align="left" style="color:rgb(64, 64, 175);"><label>CONTENT</label></th>
+            <td><input type="text" name="content"  value="{{a.content}}"></td>
+        </tr>
+        <tr>
+            <th><button class="btn-grad" type="submit"  type="submit">UPDATE</button></th>
+        </tr>
+    </table>
+</form>
+</div>
+</body>
+</html>

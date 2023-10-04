@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+<style>
+    body{
+    background-image:url({% static 'bank5.avif' %});
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:cover;
+    position:relative;
+    height:550px;
+    margin: 10px;
+    }
+
+      .btn-grad {
+            background-image: linear-gradient(to right, #314755 0%, #26a0da  51%, #314755  100%);
+            margin: 10px;
+            padding: 15px 45px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+            display: block;
+            margin-left:125px;
+            margin-top:10px;
+            height:40px;
+            width:55%;
+            padding-top:8px;
+            padding-left:2px;
+            padding-right:0px;
+          }
+</style>
+  <script src="https://kit.fontawesome.com/39d2f692ec.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="margin-left:600px;color:green;margin-top:130px;"><i class="fa-sharp fa-solid fa-circle-check fa-6x"></i></div>
+<h1 style="margin-left:350px;">Rs.{{am}} is added to your account {{ac}}</h1>
+</body>
+</html>

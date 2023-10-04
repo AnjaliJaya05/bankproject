@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <style>
+         .btn-grad {
+            background-image: linear-gradient(to right, #314755 0%, #26a0da  51%, #314755  100%);
+            margin: 10px;
+            padding: 15px 45px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+            display: block;
+            margin-left:110px;
+            margin-top:80px;
+            height:40px;
+            width:40%;
+            padding-top:7px;
+            padding-left:2px;
+            padding-right:0px;
+          }
+
+          .btn-grad:hover {
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+          }
+    </style>
+    <script src="https://kit.fontawesome.com/39d2f692ec.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="height:450px;width:35%;background-color:rgb(130, 197, 245);margin-left:30px;margin-top:70px;float:left;padding-left:30px;">
+    <u><h3 style="margin-left:120px;margin-top:70px;">Personal Details</h3></u>
+    <p style="margin-left:120px;">First name: {{a.firstname}}</p>
+    <p style="margin-left:120px;">Last name:{{a.lastname}}</p>
+    <p style="margin-left:120px;">Email:{{a.email}}</p>
+    <p style="margin-left:120px;">Phone:{{a.phone}}</p>
+    <a  href="http://127.0.0.1:8000/bank_app/edit/{{a.id}}" style="text-decoration:none;"><button class="btn-grad" type="submit">Edit details</button></a>
+</div>
+    <div style="height:450px;width:35%;background-color:rgb(10, 69, 111);margin-right:310px;margin-top:70px;float:right">
+        <a href="http://127.0.0.1:8000/bank_app/addamount/{{a.id}}"  style="text-decoration:none;" ><button class="btn-grad" type="submit">Add Amount</button></a>
+        <a href="http://127.0.0.1:8000/bank_app/amountwithdraw/{{a.id}}"  style="text-decoration:none;"><button class="btn-grad" type="submit">withdraw Amount</button></a>
+        <a href="http://127.0.0.1:8000/bank_app/checkbal/" style="text-decoration:none;"><button class="btn-grad" type="submit">Check Balance Amount</button></a>
+    </div>
+<div style="height:120px;width:12%;background-color:rgb(10, 69, 111);margin-right:30px;margin-top:-520px;float:right;"><img src="{% static img %}" style="height:120px;width:100%;border:10px;border-radius:1px;"></div>
+<div><a href="http://127.0.0.1:8000/bank_app/editimage/" class="btn"><i class="fa-sharp fa-regular fa-image" style="margin-right:30px;margin-top:-380px;float:right;"></i></a></div>
+<div style="height:40px;width:12%;margin-right:30px;margin-top:-360px;float:right;padding-bottom:45px;padding-top:-30px;">
+    <h6>Username:{{a.username}}</h6>
+    <h6>Account No:{{a.ac}}</h6>
+    <div style="height:50px;width:100%;margin-right:125px;margin-top:-90px;float:right;">
+    <a href="http://127.0.0.1:8000/bank_app/ministatement/{{a.id}}" style="text-decoration:none;"><button class="btn-grad" type="submit" style="height:30px;width:100%;">Mini statement</button></a>
+    </div>
+     <div style="height:50px;width:100%;margin-right:125px;margin-top:-50px;float:right;">
+        <a href="http://127.0.0.1:8000/bank_app/usernewsdisplay/" style="text-decoration:none;"><button class="btn-grad" type="submit" style="height:30px;width:100%;">show newsfeed</button></a>
+    </div>
+    <div style="height:50px;width:100%;margin-right:125px;margin-top:-10px;float:right;">
+        <a href="http://127.0.0.1:8000/bank_app/moneytransfer/{{a.id}}" style="text-decoration:none;"><button class="btn-grad" type="submit" style="height:30px;width:100%;">Money Transfer</button></a>
+    </div>
+    <div style="height:50px;width:100%;margin-right:125px;margin-top:-12px;float:right;">
+        <a href="http://127.0.0.1:8000/bank_app/change/{{a.id}}" style="text-decoration:none;"><button class="btn-grad" type="submit" style="height:30px;width:100%;">CHANGE PIN</button></a>
+    </div>
+    <div style="height:50px;width:100%;margin-right:125px;margin-top:-12px;float:right;">
+        <a href="http://127.0.0.1:8000/bank_app/logout/" style="text-decoration:none;"><button class="btn-grad" type="submit" style="height:30px;width:100%;">LOGOUT</button></a>
+    </div>
+</div>
+</body>
+</html>

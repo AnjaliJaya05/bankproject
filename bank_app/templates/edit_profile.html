@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <style>
+    body{
+    background-image:url({% static 'bankwall2.jpg' %});
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:cover;
+    position:relative;
+    height:550px;
+    margin: 10px;
+    }
+         .btn-grad {
+            background-image: linear-gradient(to right, #314755 0%, #26a0da  51%, #314755  100%);
+<!--            margin: 10px;-->
+            padding: 15px 45px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+            display: block;
+            margin-left:135px;
+            margin-top:20px;
+            height:40px;
+            width:42%;
+            padding-top:6px;
+            padding-left:2px;
+            padding-right:0px;
+          }
+
+          .btn-grad:hover {
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+          }
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="height:450px;width:50%;background-image:url({% static 'bank5.avif' %});
+    background-repeat:no-repeat;margin-left:290px;margin-top:50px;float:left;padding-left:30px;">
+<form method="post">{% csrf_token %}
+    <u style="color:rgb(64, 64, 175);"><h1 style="margin-left:100px;">EDIT PERSONAL DETAILS</h1></u>
+    <table style="margin-left:60px;" height="300px" width="500px">
+        <tr>
+            <th align="left" style="color:rgb(64, 64, 175);"><label>FIRST NAME</label></th>
+            <td><input type="text" name="firstname" placeholder="enter first name" value="{{a.firstname}}"></td>
+        </tr>
+        <tr>
+            <th align="left" style="color:rgb(64, 64, 175);"><label>LAST NAME</label></th>
+            <td><input type="text" name="lastname" placeholder="enter last name" value="{{a.lastname}}"></td>
+        </tr>
+        <tr>
+            <th align="left" style="color:rgb(64, 64, 175);"><label>EMAIL ID</label></th>
+            <td><input type="email" name="email" placeholder="enter your email id" value="{{a.email}}"></td>
+        </tr>
+        <tr>
+            <th align="left" style="color:rgb(64, 64, 175);"><label>PHONE NUMBER</label></th>
+            <td><input type="number" name="phone" placeholder="enter your phone number" value="{{a.phone}}"></td>
+        </tr>
+        <tr>
+            <th><button class="btn-grad" type="submit">UPDATE DETAILS</button></th>
+        </tr>
+    </table>
+</form>
+</div>
+</body>
+</html>

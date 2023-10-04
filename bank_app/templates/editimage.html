@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <style>
+              body{
+    background-image:url({% static 'bankwall2.jpg' %});
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:cover;
+    position:relative;
+    height:550px;
+    margin: 10px;
+    }
+
+      .btn-grad {
+            background-image: linear-gradient(to right, #314755 0%, #26a0da  51%, #314755  100%);
+            margin: 10px;
+            padding: 15px 45px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+            display: block;
+            margin-left:155px;
+            margin-top:10px;
+            height:40px;
+            width:35%;
+            padding-top:8px;
+            padding-left:2px;
+            padding-right:0px;
+          }
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div style="height:450px;width:50%;background-image:url({% static 'bank5.avif' %}); background-repeat:no-repeat;margin-left:290px;margin-top:50px;float:left;padding-left:30px;">
+<form method="post" enctype="multipart/form-data">{% csrf_token %}
+    <u style="color:rgb(64, 64, 175);"><h1 style="margin-left:230px;">EDIT</h1></u>
+    <table style="margin-left:50px;" height="300px" width="500">
+        <tr>
+             <td><img src="{% static img %}" height="100px" width="100px"></td>
+            <td><input type="file" name="file"></td>
+        </tr>
+        <tr>
+            <th align="left" style="color:rgb(64, 64, 175);"><label>USER NAME</label></th>
+            <td><input type="text" name="username" placeholder="enter username" value="{{a.username}}"></td>
+        </tr>
+       <tr>
+            <th><button class="btn-grad" type="submit">UPLOAD</button></th>
+        </tr>
+    </table>
+</form>
+</div>
+</body>
+</html>

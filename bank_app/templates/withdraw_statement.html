@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+   <style>
+         body{
+    background-image:url({% static 'bankwall2.jpg' %});
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:cover;
+    position:relative;
+    height:550px;
+    margin: 10px;
+    }
+     .btn-grad {
+            background-image: linear-gradient(to right, #314755 0%, #26a0da  51%, #314755  100%);
+            margin: 10px;
+            padding: 15px 45px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+            display: block;
+            margin-left:240px;
+            margin-top:40px;
+            height:35px;
+            width:20%;
+            padding-top:9px;
+            padding-left:2px;
+            padding-right:0px;
+          }
+
+          .btn-grad:hover {
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+          }
+    tr:nth-child(even){
+            background-color: aqua;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        tr:nth-child(odd){
+            background-color: white;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+        </style>
+    <script>
+    function myfunction(){
+    var body=document.getElementById('body').innerHTML;
+    var data=document.getElementById('data').innerHTML;
+    document.getElementById('body').innerHTML=data;
+    window.print()
+    }
+  </script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body id="body">
+<div  id="data" style="height:450px;width:50%;background-image:url({% static 'bank5.avif' %});margin-left:290px;margin-top:50px;float:left;padding-left:10px;">
+<u style="color:rgb(64, 64, 175);"><h1 style="margin-left:140px;">WITHDRAW STATEMENT</h1></u>
+<table border="1" align="center">
+  <tr>
+    <th>Sl.no</th>
+    <th>Date</th>
+    <th>Withdraw amount</th>
+  </tr>
+  {% for i in a %}
+  {% if i.uid == id %}
+  <tr>
+    <td>{{forloop.counter}}</td>
+    <td>{{i.date}}</td>
+    <td>{{i.amount}}</td>
+  </tr>
+   {% endif %}
+   {% endfor %}
+</table>
+  <button onclick="myfunction()" class="btn-grad">PRINT</button>
+  </div>
+</body>
+</html>

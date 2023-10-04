@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+     <style>
+        body{
+    background-image:url({% static 'bankwall2.jpg'%});
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:cover;
+    position:relative;
+    height:550px;
+    margin: 10px;
+    }
+
+         .btn-grad {
+            background-image: linear-gradient(to right, #314755 0%, #26a0da  51%, #314755  100%);
+            margin: 10px;
+            padding: 15px 45px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;
+            box-shadow: 0 0 20px #eee;
+            border-radius: 10px;
+            display: block;
+            height:30px;
+            padding-top:4px;
+            padding-left:30px;
+            width:30%;
+            margin-left:5px;
+          }
+
+          .btn-grad:hover {
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
+          }
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" enctype="multipart/form-data">{% csrf_token %}
+    <u style="color:rgb(64, 64, 175);"><h1 style="margin-top:30px;margin-left:60px;">ADMIN LOGIN</h1></u>
+    <table  height="200px" width="400px" style="margin-left:60px;">
+        <tr>
+            <td><input type="text" name="username" placeholder="Enter username" style="width:50%;"></td>
+        </tr>
+        <tr>
+            <td><input type="password" name="password" placeholder="Enter password" style="width:50%;"></td>
+        </tr>
+        <tr>
+            <th><button class="btn-grad" type="submit">SUBMIT</button></th>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
